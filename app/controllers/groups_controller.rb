@@ -2,12 +2,12 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
     
   def index
-    @groups = Group.includes(:user, :transaction).where(user_id: current_user.id)
+    @groups = Group.includes(:user, :transactions).where(user_id: current_user)
   end
 
   def show
     @group = Group.find(params[:id])
-    @group_transactions = @group.transactions.includes(:user).where(user_id: current_user.id)
+    @group_transactions = @group.transactions.includes(:user).where(user_id: current_user)
   end
 
   def new
@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
   private
 
   def set_group
-    @group = Transaction.find(params[:id])
+    @group = Group.find(params[:id])
   end
 
   def group_params
