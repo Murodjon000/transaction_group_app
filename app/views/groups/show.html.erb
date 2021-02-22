@@ -1,17 +1,20 @@
+<div class='flex align-center justify-center'>
+  <img src="<%=@group.icon%>" class="size img-circle"/>
+  <h2  class='ml-2'><%= @group.name %></h2>
+</div>
+  <hr>
 <div class='row'>
-  <div class='col-md-6 col-md-offset-3'>
-    <img src="<%=@group.icon%>" class="size rounded-circle"/>
-    <h5><%= @group.title.capitalize %></h5>
-
-    <%= @group_transactions.each do |g| %>
+  <div class='col-md-6 col-md-offset-3 bg-white p-4 img-rounded'>
+    <% @group_transactions.each do |g| %>
     <div class='list-group'>
-        <div class='flex align-center justify-beetwen list-group-item list-group-item-action'>
-            <div>
-                <h5><%= g.name.capitalize %></h5>
+        <div class='list-group-item list-group-item-action'>
+            <div class='flex justify-beetwen'>
+                <h5><%= g.name %></h5>
                 <h5><%= number_to_currency(g.amount) %></h5>
             </div>
+            <hr>
             
-            <div class='flex justify-beetwen align-center'>
+            <div class=''>
               <h5>Transaction by: <%= g.user.name.capitalize %></h5>
             </div>
         
