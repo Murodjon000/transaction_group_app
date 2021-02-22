@@ -1,0 +1,17 @@
+<h1 class='text-center'>All groups</h1>
+
+<% @groups.each do |g| %>
+    <div class='list-group mt-4'>
+        <div class='flex align-center justify-beetwen list-group-item list-group-item-action'>
+            <div class='flex align-center'>
+                <img src="<%=g.icon%>" class="size img-circle"/>
+                <h5 class='ml-2'><%= g.name %></h5>
+            </div>
+            
+            <div class='flex justify-beetwen align-center'>
+              <h5>Transaction by: <%= g.user.name %> </h5>
+            </div>
+        
+        </div>
+    </div>
+<% end %>
