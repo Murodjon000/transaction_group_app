@@ -1,0 +1,22 @@
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <img src="<%=@group.icon%>" class="size rounded-circle"/>
+    <h5><%= @group.title.capitalize %></h5>
+
+    <%= @group_transactions.each do |g| %>
+    <div class='list-group'>
+        <div class='flex align-center justify-beetwen list-group-item list-group-item-action'>
+            <div>
+                <h5><%= g.name.capitalize %></h5>
+                <h5><%= number_to_currency(g.amount) %></h5>
+            </div>
+            
+            <div class='flex justify-beetwen align-center'>
+              <h5>Transaction by: <%= g.user.name.capitalize %></h5>
+            </div>
+        
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>
