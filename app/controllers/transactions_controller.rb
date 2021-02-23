@@ -31,10 +31,10 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
 
     if @transaction.update(transaction_params)
-        flash.now[:success] = 'You updated your transaction'
+        flash[:success] = 'You updated your transaction'
         redirect_to root_path
     else
-        flash.now[:alert] = 'Transaction was not updated'
+        flash[:alert] = 'Transaction was not updated'
         render :edit
     end
   end
