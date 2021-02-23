@@ -2,12 +2,12 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
     
   def index
-    @groups = Group.includes(:user, :transactions).where(user_id: current_user)
+    @groups = Group.includes(:user, :transactions).paginate(page: params[:page], per_page: 2).order(:name)
   end
 
   def show
     @group = Group.find(params[:id])
-    @group_transactions = @group.transactions.includes(:user).where(user_id: current_user)
+    @group_transactions = @group.transactions.includes(:user)
   end
 
   def new
@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
         flash[:success] = 'Group created'
         redirect_to @group
     else
-        flash[:alert] = 'Group was not created'
+        flash.now[:alert] = 'Group was not created'
         render :new
     end
   end
