@@ -1,17 +1,29 @@
-<h1 class='text-center'>All groups</h1>
+<%= provide(:title,'All groups') %>
+<h1 class='text-center pt-4'>All groups</h1>
 
+<div class='p-4'>
 <% @groups.each do |g| %>
-    <div class='list-group mt-4'>
-        <div class='flex align-center justify-beetwen list-group-item list-group-item-action'>
-            <div class='flex align-center'>
-                <img src="<%=g.icon%>" class="size img-circle"/>
-                <h5 class='ml-2'><%= g.name %></h5>
+    <div class='list-group mt-3'>
+        <div class=' list-group-item list-group-item-action'>
+            <div class='d-flex align-items-center justify-content-between'>
+                <div class='d-flex align-items-center'>
+                  <img src="<%=g.icon%>" class="size rounded"/>
+                  <%= link_to g.name, g ,class:'ml-2' %>
+                </div>
+
+                <div class='d-flex justify-content-between align-items-center'>
+                  <h5>Group by: <%= g.user.name %> </h5>
+                </div>
             </div>
-            
-            <div class='flex justify-beetwen align-center'>
-              <h5>Transaction by: <%= g.user.name %> </h5>
-            </div>
-        
+            <span class='d-flex justify-content-end'><%= g.created_at.strftime("%d %B %Y") %> </span>
         </div>
     </div>
 <% end %>
+
+<%= link_to 'Create new', new_group_path, class: 'btn btn-primary btn__sign my-3' %>
+
+<div class='d-flex justify-content-between align-items-center'>
+    <%= link_to icon("arrow-left-square", class: "text-danger main__icon"), root_path %>
+     <%= will_paginate @groups, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
+</div>
