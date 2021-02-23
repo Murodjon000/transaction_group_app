@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @transactions = Transaction.includes(:group).where(user_id: current_user.id).grouped
+    @transactions = Transaction.includes(:group).paginate(page: params[:page], per_page: 2).where(user_id: current_user).grouped.order('created_at DESC')
     @transaction_sum = Transaction.where(user_id: current_user.id).grouped.sum(:amount)
   end
 
@@ -15,10 +15,10 @@ class TransactionsController < ApplicationController
     @transaction = current_user.transactions.build(transaction_params)
 
     if @transaction.save
-      flash[:success] = 'You created new transaction'
+      flash.now[:success] = 'You created new transaction'
       redirect_to root_path
     else
-      flash[:alert] = 'Transaction was not created'
+      flash.now[:alert] = 'Transaction was not created'
       render :new
     end
   end
@@ -31,10 +31,10 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
 
     if @transaction.update(transaction_params)
-        flash[:success] = 'You updated your transaction'
+        flash.now[:success] = 'You updated your transaction'
         redirect_to root_path
     else
-        flash[:alert] = 'Transaction was not updated'
+        flash.now[:alert] = 'Transaction was not updated'
         render :edit
     end
   end
@@ -46,7 +46,7 @@ class TransactionsController < ApplicationController
   end
 
   def external_transaction
-    @external_transactions = Transaction.where(user_id: current_user.id).not_grouped
+    @external_transactions = Transaction.paginate(page: params[:page], per_page: 2).where(user_id: current_user.id).not_grouped
     @external_transactions_sum = Transaction.where(user_id: current_user.id).not_grouped.sum(:amount)
   end
 
