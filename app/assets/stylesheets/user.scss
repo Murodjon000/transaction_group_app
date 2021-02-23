@@ -8,6 +8,9 @@
 
 .text-lg {
     font-size: 24px;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .pagination {
