@@ -46,7 +46,7 @@ class TransactionsController < ApplicationController
   end
 
   def external_transaction
-    @external_transactions = Transaction.paginate(page: params[:page], per_page: 2).where(user_id: current_user.id).not_grouped # rubocop:disable Layout/LineLength
+    @external_transactions = Transaction.paginate(page: params[:page], per_page: 2).where(user_id: current_user.id).not_grouped
     @external_transactions_sum = Transaction.where(user_id: current_user.id).not_grouped.sum(:amount)
   end
 
