@@ -1,4 +1,4 @@
-
+<%= provide(:title,'Transactions') %>
 <div class='p-4'>
 <h5 class='my-3'>Total amount: <%= number_to_currency(@transaction_sum) %></h5>
     <% @transactions.each do |t| %>
