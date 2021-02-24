@@ -75,4 +75,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-[MIT]()
+[MIT](https://github.com/Murodjon000/ror_capstone_transaction_app/blob/development/LICENSE)
