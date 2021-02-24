@@ -1,0 +1,21 @@
+<%= provide(:title,current_user.name) %>
+<div class='d-flex justify-content-center flex-column '>
+<div class='mx-auto my-3'>
+  <h1> Hi there, <%= current_user.name %>! </h1>
+</div>
+<div class='list-group mt-3'>
+  <div class='list-group-item list-group-item-action'>
+      <%= link_to 'All my transactions', transactions_path, class: 'text-lg' %>
+  </div>
+  <div class='list-group-item list-group-item-action my-3 border'>
+      <%= link_to 'All my external transactions', external_transaction_path, class: 'text-lg' %>
+  </div>
+  <div class='list-group-item list-group-item-action border'>
+      <%= link_to 'All groups', groups_path, class: 'text-lg' %>
+  </div>
+</div>
+
+</div>
+
+     
+  
