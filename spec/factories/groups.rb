@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :group do
     name { "Guys" }
-    icon { "MyString" }
+    icon { "http//MyString" }
   end
 end
