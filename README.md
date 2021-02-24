@@ -67,7 +67,7 @@ The design of the project was inspired by [Snapscan](https://www.behance.net/gal
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/Murodjon000/ror_capstone_transaction_app/issues).
 
 ## Show your support
 
