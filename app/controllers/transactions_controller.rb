@@ -3,8 +3,10 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    # rubocop:disable Layout/HashAlignment
     @transactions = Transaction.includes(:group).paginate(page: params[:page],
                     per_page: 2).where(user_id: current_user).grouped.order('created_at DESC')
+    # rubocop:enable Layout/HashAlignment
     @transaction_sum = Transaction.where(user_id: current_user.id).grouped.sum(:amount)
   end
 
@@ -47,8 +49,10 @@ class TransactionsController < ApplicationController
   end
 
   def external_transaction
+    # rubocop:disable Layout/HashAlignment
     @external_transactions = Transaction.paginate(page: params[:page],
                             per_page: 2).where(user_id: current_user.id).not_grouped
+    # rubocop:enable Layout/HashAlignment
     @external_transactions_sum = Transaction.where(user_id: current_user.id).not_grouped.sum(:amount)
   end
 
