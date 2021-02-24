@@ -4,10 +4,10 @@
        <%= link_to "transaction app",root_path, id: "logo" %>
         <div class=''>
          <% if current_user %>
-                <%= link_to "Log out", destroy_user_session_path, method:"delete", class: 'text-white' %>
+                <%= link_to "Log out", destroy_user_session_path, method:"delete", class: 'text-lg text-white' %>
           <% else %>
-                 <%= link_to "Log in", new_user_session_path, class: 'text-white mx-2' %>
-                 <%= link_to "Sign up", new_user_registration_path, class:'text-white' %>
+                 <%= link_to "Log in", new_user_session_path, class: 'text-white mx-2 text-lg' %>
+                 <%= link_to "Sign up", new_user_registration_path, class:'text-white text-lg' %>
           <% end %>
         </div>
         </div>
