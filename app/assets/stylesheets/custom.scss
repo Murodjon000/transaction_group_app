@@ -5,11 +5,11 @@ $second:#5fb523;
 $text:#434b54;
 
 @mixin box_sizing {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-    
+
 $gray-light:#777;
 
 .text-white {
@@ -21,19 +21,18 @@ ul {
 }
 
 .btn__primary {
-    background-color: $main;
-    color: white;
+  background-color: $main;
+  color: white;
 }
 
 .btn__sign {
-    width: 100%;
+  width: 100%;
 }
 
 .header__box {
-    border-bottom: 1px solid #ddd;
-    background-color: $main;
+  border-bottom: 1px solid #ddd;
+  background-color: $main;
 }
-
 
 body {
   background-color: #F3F2EF;
@@ -89,11 +88,11 @@ p {
 }
 
 .bg-white {
-    background-color: white;
+  background-color: white;
 }
 
 .p-4 {
-    padding: 16px;
+  padding: 16px;
 }
 
 /* forms */

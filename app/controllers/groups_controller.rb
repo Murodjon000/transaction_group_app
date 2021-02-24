@@ -1,8 +1,9 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
-    
+  before_action :set_group, only: %i[show edit update destroy]
+  before_action :authenticate_user!
+
   def index
-    @groups = Group.includes(:user, :transactions).paginate(page: params[:page], per_page: 2).order(:name)
+    @groups = Group.includes(:user, :transactions).paginate(page: params[:page], per_page: 2).order(:name) # rubocop:disable Layout/LineLength
   end
 
   def show
@@ -18,11 +19,11 @@ class GroupsController < ApplicationController
     @group = current_user.groups.build(group_params)
 
     if @group.save
-        flash[:success] = 'Group created'
-        redirect_to @group
+      flash[:success] = 'Group created'
+      redirect_to @group
     else
-        flash.now[:alert] = 'Group was not created'
-        render :new
+      flash.now[:alert] = 'Group was not created'
+      render :new
     end
   end
 
@@ -35,5 +36,4 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name, :icon, :user_id)
   end
-
 end

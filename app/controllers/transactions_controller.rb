@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  before_action :set_transaction, only: [:show, :update, :destroy, :edit]
+  before_action :set_transaction, only: %i[show update destroy edit]
   before_action :authenticate_user!
 
   def index
@@ -31,11 +31,11 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
 
     if @transaction.update(transaction_params)
-        flash[:success] = 'You updated your transaction'
-        redirect_to root_path
+      flash[:success] = 'You updated your transaction'
+      redirect_to root_path
     else
-        flash[:alert] = 'Transaction was not updated'
-        render :edit
+      flash[:alert] = 'Transaction was not updated'
+      render :edit
     end
   end
 
@@ -46,7 +46,7 @@ class TransactionsController < ApplicationController
   end
 
   def external_transaction
-    @external_transactions = Transaction.paginate(page: params[:page], per_page: 2).where(user_id: current_user.id).not_grouped
+    @external_transactions = Transaction.paginate(page: params[:page], per_page: 2).where(user_id: current_user.id).not_grouped # rubocop:disable Layout/LineLength
     @external_transactions_sum = Transaction.where(user_id: current_user.id).not_grouped.sum(:amount)
   end
 
