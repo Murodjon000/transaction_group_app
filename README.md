@@ -19,7 +19,7 @@ The data models were constructed according to the following Entity Relationship 
 
 ## Live Demo
 
-- [click-here]()
+- [transaction-app-ror](https://transaction-app-ror.herokuapp.com/)
 
 ## Built With
 
