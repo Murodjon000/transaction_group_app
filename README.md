@@ -74,5 +74,3 @@ Feel free to check the [issues page](https://github.com/Murodjon000/ror_capstone
 Give a ⭐️ if you like this project!
 
 ## 📝 License
-
-[MIT](https://github.com/Murodjon000/ror_capstone_transaction_app/blob/development/LICENSE)
