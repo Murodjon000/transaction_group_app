@@ -13,7 +13,7 @@
 - Logged in user can visit show page of a group which will list all payments associated with it
 - Followed TDD
 
-## The data models were constructed according to the following Entity Relationship Diagram(ERD):
+The data models were constructed according to the following Entity Relationship Diagram(ERD):
 
 >![ERD](./app/assets/images/diagram.png)
 
