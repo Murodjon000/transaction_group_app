@@ -3,7 +3,8 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @transactions = Transaction.includes(:group).paginate(page: params[:page], per_page: 2).where(user_id: current_user).grouped.order('created_at DESC')
+    @transactions = Transaction.includes(:group).paginate(page: params[:page],
+                    per_page: 2).where(user_id: current_user).grouped.order('created_at DESC')
     @transaction_sum = Transaction.where(user_id: current_user.id).grouped.sum(:amount)
   end
 
@@ -46,7 +47,8 @@ class TransactionsController < ApplicationController
   end
 
   def external_transaction
-    @external_transactions = Transaction.paginate(page: params[:page], per_page: 2).where(user_id: current_user.id).not_grouped
+    @external_transactions = Transaction.paginate(page: params[:page],
+                            per_page: 2).where(user_id: current_user.id).not_grouped
     @external_transactions_sum = Transaction.where(user_id: current_user.id).not_grouped.sum(:amount)
   end
 
