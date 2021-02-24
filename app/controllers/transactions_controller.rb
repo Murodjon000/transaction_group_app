@@ -18,7 +18,7 @@ class TransactionsController < ApplicationController
     @transaction = current_user.transactions.build(transaction_params)
 
     if @transaction.save
-      flash.now[:success] = 'You created new transaction'
+      flash[:success] = 'You created new transaction'
       redirect_to root_path
     else
       flash.now[:alert] = 'Transaction was not created'
