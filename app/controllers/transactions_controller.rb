@@ -5,7 +5,7 @@ class TransactionsController < ApplicationController
   def index
     # rubocop:disable Layout/HashAlignment
     @transactions = Transaction.includes(:group).paginate(page: params[:page],
-                    per_page: 2).where(user_id: current_user).grouped.order('created_at DESC')
+                    per_page: 2).where(user_id: current_user.id).grouped
     # rubocop:enable Layout/HashAlignment
     @transaction_sum = Transaction.where(user_id: current_user.id).grouped.sum(:amount)
   end

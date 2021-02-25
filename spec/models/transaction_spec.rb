@@ -11,7 +11,7 @@ RSpec.describe Transaction, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:name) }
 
-    it { should validate_length_of(:name).with_message('Transaction name should be at lest 10 letters.') }
+    it { should validate_length_of(:name).with_message('Transaction name should be at lest 4 letters.') }
 
     it { should validate_presence_of(:amount) }
   end
