@@ -2,8 +2,11 @@
 
 > Transaction app is a web app that allows you to group payments with your friends and family.
 >![App](./app/assets/images/app.png)
+# Transactions page
 >![App](./app/assets/images/app3.png)
+# External Transactions page
 >![App](./app/assets/images/app1.png)
+# All Groups page
 >![App](./app/assets/images/app2.png)
 ## Features
 
