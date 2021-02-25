@@ -21,6 +21,10 @@ The data models were constructed according to the following Entity Relationship 
 
 - [transaction-app-ror](https://transaction-app-ror.herokuapp.com/)
 
+## Video link
+
+- [transaction-video](https://www.loom.com/share/03a45d75325341029fcf736b68d87328)
+
 ## Built With
 
 - Ruby v2.6.5
