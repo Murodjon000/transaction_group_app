@@ -3,12 +3,11 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = Group.includes(:user, :transactions).paginate(page: params[:page], per_page: 2).order(:name)
+    @groups = Group.includes(:user).paginate(page: params[:page], per_page: 2).order(:name)
   end
 
   def show
     @group = Group.find(params[:id])
-    @group_transactions = @group.transactions.includes(:user)
   end
 
   def new
