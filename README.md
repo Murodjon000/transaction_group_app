@@ -29,7 +29,7 @@ The data models were constructed according to the following Entity Relationship 
 
 ## Video link
 
-- [transaction-video](https://www.loom.com/share/03a45d75325341029fcf736b68d87328)
+- [transaction-video](https://www.loom.com/share/0544c4a1c56e4cca87c5ff54cf040153)
 
 ## Built With
 
