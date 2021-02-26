@@ -1,7 +1,13 @@
 # Transaction app
 
 > Transaction app is a web app that allows you to group payments with your friends and family.
-
+>![App](./app/assets/images/app.png)
+# Transactions page
+>![App](./app/assets/images/app3.png)
+# External Transactions page
+>![App](./app/assets/images/app1.png)
+# All Groups page
+>![App](./app/assets/images/app2.png)
 ## Features
 
 - User can signup and login
@@ -20,6 +26,10 @@ The data models were constructed according to the following Entity Relationship 
 ## Live Demo
 
 - [transaction-app-ror](https://transaction-app-ror.herokuapp.com/)
+
+## Video link
+
+- [transaction-video](https://www.loom.com/share/03a45d75325341029fcf736b68d87328)
 
 ## Built With
 
