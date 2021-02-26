@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_085620) do
+ActiveRecord::Schema.define(version: 2021_02_25_145243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,15 +24,22 @@ ActiveRecord::Schema.define(version: 2021_02_22_085620) do
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
-  create_table "transactions", force: :cascade do |t|
+  create_table "payments", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "group_id"
-    t.index ["group_id"], name: "index_transactions_on_group_id"
-    t.index ["user_id"], name: "index_transactions_on_user_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
+  create_table "payments_groups", force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "payment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_payments_groups_on_group_id"
+    t.index ["payment_id"], name: "index_payments_groups_on_payment_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_085620) do
   end
 
   add_foreign_key "groups", "users"
-  add_foreign_key "transactions", "groups"
-  add_foreign_key "transactions", "users"
+  add_foreign_key "payments", "users"
+  add_foreign_key "payments_groups", "groups"
+  add_foreign_key "payments_groups", "payments"
 end
