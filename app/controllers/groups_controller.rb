@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @group_payments = @group.payments.paginate(page: params[:page], per_page: 2).order('created_at DESC')
   end
 
   def new
