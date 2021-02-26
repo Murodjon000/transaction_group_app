@@ -5,7 +5,8 @@ RSpec.describe Group, type: :model do
 
   describe 'associations' do
     it { should belong_to(:user) }
-    it { should have_many(:transactions) }
+    it { should have_many(:payments_groups) }
+    it { should have_many(:payments).through(:payments_groups) }
   end
 
   describe 'validations' do
