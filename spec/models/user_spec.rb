@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
 
   describe 'associations' do
     it { should have_many(:groups) }
-    it { should have_many(:transactions) }
+    it { should have_many(:payments) }
   end
 
   describe 'validations' do
