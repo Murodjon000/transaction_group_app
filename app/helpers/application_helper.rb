@@ -4,7 +4,7 @@ module ApplicationHelper
     if title.empty?
       base_title
     else
-      title + ' | ' + base_title
+      title + ' |'.concat(base_title)
     end
   end
 end
