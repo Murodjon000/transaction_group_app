@@ -43,6 +43,7 @@ The data models were constructed according to the following Entity Relationship 
 - cd `into` the project
 - Run `git pull origin transiction`
 - Run `bundle install`
+- Run `yarn install --check-files`
 - Setup your `db` in the `database.yml` and run `rails db:setup`
 - Run `rails s` and visit `localhost:3000`
 
