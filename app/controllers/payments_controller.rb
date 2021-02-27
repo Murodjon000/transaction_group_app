@@ -15,10 +15,10 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    payment = current_user.payments.build(payment_params)
-    if payment.save
+    @payment = current_user.payments.build(payment_params)
+    if @payment.save
       group_id = params[:payment][:group_id]
-      PaymentsGroup.create(group_id: group_id, payment_id: payment.id) if group_id
+      PaymentsGroup.create(group_id: group_id, payment_id: @payment.id) if group_id
       flash[:success] = 'You created new payment'
       redirect_to root_path
     else
