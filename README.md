@@ -1,17 +1,24 @@
 # Transaction app
 
 > Transaction app is a web app that allows you to group payments with your friends and family.
->![App](./app/assets/images/app.png)
+> ![App](./app/assets/images/app.png)
+
 # Transactions page
->![App](./app/assets/images/app3.png)
+
+> ![App](./app/assets/images/app3.png)
+
 # External Transactions page
->![App](./app/assets/images/app1.png)
+
+> ![App](./app/assets/images/app1.png)
+
 # All Groups page
->![App](./app/assets/images/app2.png)
+
+> ![App](./app/assets/images/app2.png)
+
 ## Features
 
 - User can signup and login
-- Guest user can't access any other page in the app except  login and signup pages
+- Guest user can't access any other page in the app except login and signup pages
 - Logged in user can access her and only her profile page
 - Profile page provides links to "All my transactions", "All my external transactions" and "All groups"
 - Logged in user can view all his transactions and create new ones which can be assigned to a group
@@ -21,7 +28,7 @@
 
 The data models were constructed according to the following Entity Relationship Diagram(ERD):
 
->![ERD](./app/assets/images/diagram.png)
+> ![ERD](./app/assets/images/diagram.png)
 
 ## Live Demo
 
@@ -43,9 +50,9 @@ The data models were constructed according to the following Entity Relationship 
 - cd `into` the project
 - Run `git pull origin transiction`
 - Run `bundle install`
+- Run `yarn install --check-files`
 - Setup your `db` in the `database.yml` and run `rails db:setup`
 - Run `rails s` and visit `localhost:3000`
-
 
 ### Github Actions
 
@@ -55,7 +62,6 @@ To make sure the linters' checks using Github Actions work properly, you should 
 2. Create the `feature/branch` and push.
 3. Start working on your milestone as usual.
 4. Open a PR from the `feature/branch` when your work is done.
-
 
 ### Run tests
 
